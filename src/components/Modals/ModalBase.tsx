@@ -1,4 +1,5 @@
 import { useEffect, type ReactNode } from 'react'
+import { createPortal } from 'react-dom'
 
 interface Props {
   onClose: () => void
@@ -13,7 +14,7 @@ export function ModalBase({ onClose, children, maxWidth = 'max-w-[440px]' }: Pro
     return () => document.removeEventListener('keydown', handler)
   }, [onClose])
 
-  return (
+  return createPortal(
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-5 animate-fade-up"
       onClick={onClose}
@@ -24,6 +25,7 @@ export function ModalBase({ onClose, children, maxWidth = 'max-w-[440px]' }: Pro
       >
         {children}
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
