@@ -6,7 +6,7 @@ export function App() {
   const { isSidebarOpen, toggleSidebar } = useChatStore()
 
   return (
-    <div className="flex h-screen w-screen overflow-hidden bg-white">
+    <div className="app-shell">
       {isSidebarOpen && (
         <div
           className="fixed inset-0 z-20 bg-black/40 md:hidden"

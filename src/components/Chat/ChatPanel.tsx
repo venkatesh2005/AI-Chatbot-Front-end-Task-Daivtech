@@ -17,8 +17,8 @@ export function ChatPanel() {
   if (!activeChat) return null
 
   return (
-    <div className="flex-1 flex flex-col h-full overflow-hidden bg-white min-w-0">
-      <header className="h-14 border-b border-gray-200 flex items-center gap-2.5 px-4 bg-white shrink-0">
+    <div className="flex-1 flex flex-col overflow-hidden bg-white min-w-0">
+      <header className="h-14 border-b border-gray-200 flex items-center gap-2.5 px-4 bg-white shrink-0 sticky top-0 z-10">
         <button
           onClick={toggleSidebar}
           className="w-[34px] h-[34px] flex items-center justify-center rounded-lg text-gray-500 hover:bg-gray-100 transition-colors"
